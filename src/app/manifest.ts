@@ -2,8 +2,8 @@ import type { MetadataRoute } from 'next';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'iGoodonto - Instituto Guimarães de Odontologia',
-    short_name: 'iGoodonto',
+    name: 'IGO Odonto - Instituto Guimarães de Odontologia',
+    short_name: 'IGO Odonto',
     description: 'Clínica odontológica de alto padrão em Uberlândia desde 1991. Especialistas em Invisalign, Implantes e Estética Dental.',
     start_url: '/',
     display: 'standalone',

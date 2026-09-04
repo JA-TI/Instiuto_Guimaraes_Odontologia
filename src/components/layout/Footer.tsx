@@ -27,13 +27,13 @@ export default function Footer() {
   );
 
   return (
-    <footer className="bg-navy-950 text-slate-300 pt-16 pb-8 border-t border-slate-800 relative overflow-hidden">
+    <footer className="bg-slate-950 text-slate-300 pt-16 pb-8 border-t border-white/10 relative overflow-hidden">
       {/* Background Subtle Glows */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-brand-500/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-10 w-96 h-96 bg-brand-700/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-10 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-14 border-b border-slate-800/80">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-14 border-b border-white/10">
           
           {/* Column 1: Clinic Presentation (4 cols) */}
           <div className="lg:col-span-4 space-y-5">
@@ -211,7 +211,7 @@ export default function Footer() {
                 title="Mapa de localização Instituto Guimarães de Odontologia"
                 className="w-full h-full"
               />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy-950 via-navy-950/80 to-transparent p-2 text-center">
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent p-2 text-center">
                 <a
                   href={clinicInfo.address.googleMapsUrl}
                   target="_blank"

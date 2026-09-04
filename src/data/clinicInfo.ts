@@ -1,5 +1,5 @@
 export const clinicInfo = {
-  name: "iGoodonto",
+  name: "IGO Odonto",
   fullName: "Instituto Guimarães de Odontologia",
   tagline: "Odontologia de Alta Performance e Cuidado Humanizado",
   foundingYear: 1991,

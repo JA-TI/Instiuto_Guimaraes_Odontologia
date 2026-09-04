@@ -11,6 +11,8 @@ import {
   ShieldCheck 
 } from 'lucide-react';
 
+import Button from '@/components/ui/Button';
+
 export default function Professionals() {
   return (
     <section id="profissionais" className="py-24 bg-white relative overflow-hidden scroll-mt-20 lg:scroll-mt-24">
@@ -79,26 +81,28 @@ export default function Professionals() {
 
                 {/* Bottom Action CTAs */}
                 <div className="pt-5 mt-5 border-t border-slate-200/80 flex flex-col gap-2">
-                  <a
+                  <Button
                     href={docWhatsAppUrl}
                     target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full inline-flex items-center justify-center space-x-2 bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs sm:text-sm py-3 px-4 rounded-xl shadow-sm hover:shadow-md transition-all"
+                    variant="primary"
+                    size="sm"
+                    fullWidth
+                    leftIcon={<Calendar className="w-4 h-4" />}
                   >
-                    <Calendar className="w-4 h-4" />
-                    <span>Agendar com {doctor.name.split(' ')[0]} {doctor.name.split(' ')[1]}</span>
-                  </a>
+                    Agendar com {doctor.name.split(' ')[0]} {doctor.name.split(' ')[1]}
+                  </Button>
 
                   {doctor.doctoraliaUrl && (
-                    <a
+                    <Button
                       href={doctor.doctoraliaUrl}
                       target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full inline-flex items-center justify-center space-x-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs py-2.5 px-4 rounded-xl border border-slate-200 transition-colors"
+                      variant="secondary"
+                      size="sm"
+                      fullWidth
+                      rightIcon={<ExternalLink className="w-3.5 h-3.5" />}
                     >
-                      <span>Ver Perfil Doctoralia</span>
-                      <ExternalLink className="w-3.5 h-3.5" />
-                    </a>
+                      Ver Perfil Doctoralia
+                    </Button>
                   )}
                 </div>
 

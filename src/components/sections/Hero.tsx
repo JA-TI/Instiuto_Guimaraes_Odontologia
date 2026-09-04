@@ -10,6 +10,8 @@ import {
   ArrowRight
 } from 'lucide-react';
 
+import Button from '@/components/ui/Button';
+
 export default function Hero() {
   const whatsappUrl = formatWhatsAppUrl(
     clinicInfo.whatsappRaw,
@@ -50,23 +52,24 @@ export default function Hero() {
 
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-1">
-            <a
+            <Button
               href={whatsappUrl}
               target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center space-x-2.5 bg-brand-500 hover:bg-brand-600 text-white font-semibold text-base px-7 py-3.5 rounded-xl shadow-lg shadow-brand-500/25 hover:-translate-y-0.5 transition-all duration-200"
+              variant="primary"
+              size="lg"
+              leftIcon={<Calendar className="w-4 h-4" />}
+              rightIcon={<ArrowRight className="w-4 h-4" />}
             >
-              <Calendar className="w-4 h-4" />
-              <span>Agendar uma consulta</span>
-              <ArrowRight className="w-4 h-4" />
-            </a>
+              Agendar uma consulta
+            </Button>
 
-            <a
+            <Button
               href="#espaco"
-              className="inline-flex items-center justify-center space-x-2 bg-white/10 hover:bg-white/20 text-white font-medium text-base px-6 py-3.5 rounded-xl border border-white/20 backdrop-blur-sm transition-all duration-200"
+              variant="outlineWhite"
+              size="lg"
             >
-              <span>Conhecer a clínica</span>
-            </a>
+              Conhecer a clínica
+            </Button>
           </div>
 
           {/* Location & Heritage in place of stats */}

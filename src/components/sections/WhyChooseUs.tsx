@@ -15,6 +15,8 @@ import {
   CheckCircle2
 } from 'lucide-react';
 
+import Button from '@/components/ui/Button';
+
 export default function WhyChooseUs() {
   const whatsappUrl = formatWhatsAppUrl(
     clinicInfo.whatsappRaw,
@@ -109,16 +111,18 @@ export default function WhyChooseUs() {
             </p>
           </div>
 
-          <a
+          <Button
             href={whatsappUrl}
             target="_blank"
-            rel="noopener noreferrer"
-            className="shrink-0 inline-flex items-center space-x-3 bg-white hover:bg-slate-100 text-brand-900 font-extrabold text-sm sm:text-base px-8 py-4 rounded-2xl shadow-xl hover:scale-105 transition-all"
+            variant="white"
+            size="lg"
+            shape="2xl"
+            className="shrink-0"
+            leftIcon={<Calendar className="w-5 h-5 text-brand-700" />}
+            rightIcon={<ArrowRight className="w-4 h-4 text-brand-700" />}
           >
-            <Calendar className="w-5 h-5 text-brand-700" />
-            <span>Agendar Consulta de Avaliação</span>
-            <ArrowRight className="w-4 h-4 text-brand-700" />
-          </a>
+            Agendar Consulta de Avaliação
+          </Button>
         </div>
 
       </div>

@@ -18,9 +18,10 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'iGoodonto | Instituto Guimarães de Odontologia - Desde 1991 em Uberlândia',
+  title: 'IGO Odonto | Instituto Guimarães de Odontologia - Desde 1991 em Uberlândia',
   description: 'Clínica odontológica de alto padrão em Uberlândia. Especialistas em Invisalign, Implantes Dentários, Ortodontia e Estética do Sorriso. Dra. Ana Lúcia Guimarães (CRO-MG 15381) e Dr. Fernando Guimarães (CRO-MG 16129).',
   keywords: [
+    'IGO Odonto',
     'iGoodonto',
     'Instituto Guimarães de Odontologia',
     'Dentista em Uberlândia',
@@ -33,8 +34,8 @@ export const metadata: Metadata = {
     'Clareamento Dental Uberlândia'
   ],
   authors: [{ name: 'Instituto Guimarães de Odontologia', url: 'https://igoodonto.com.br' }],
-  creator: 'iGoodonto',
-  publisher: 'iGoodonto',
+  creator: 'IGO Odonto',
+  publisher: 'IGO Odonto',
   metadataBase: new URL('https://igoodonto.com.br'),
   alternates: {
     canonical: '/',
@@ -51,10 +52,10 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'iGoodonto | Instituto Guimarães de Odontologia',
+    title: 'IGO Odonto | Instituto Guimarães de Odontologia',
     description: 'Transformando sorrisos com tecnologia 3D, conforto e mais de 30 anos de tradição em Uberlândia.',
     url: 'https://igoodonto.com.br',
-    siteName: 'iGoodonto',
+    siteName: 'IGO Odonto',
     locale: 'pt_BR',
     type: 'website',
     images: [
@@ -68,7 +69,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'iGoodonto | Instituto Guimarães de Odontologia',
+    title: 'IGO Odonto | Instituto Guimarães de Odontologia',
     description: 'Transformando sorrisos com tecnologia 3D, conforto e mais de 30 anos de tradição em Uberlândia.',
     images: ['/images/clinic/IGO-Frente.jpeg'],
   },

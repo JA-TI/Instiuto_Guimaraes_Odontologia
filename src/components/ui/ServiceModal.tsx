@@ -8,10 +8,11 @@ import { formatWhatsAppUrl } from '@/lib/utils';
 import { 
   X, 
   Calendar, 
-  ArrowRight,
+  ArrowRight, 
   MoveHorizontal,
   ExternalLink
 } from 'lucide-react';
+import Button from '@/components/ui/Button';
 
 interface ServiceModalProps {
   service: Service | null;
@@ -140,27 +141,29 @@ export default function ServiceModal({ service, onClose }: ServiceModalProps) {
 
           <div className="flex flex-col sm:flex-row items-center gap-2.5 w-full sm:w-auto">
             {service.simulationUrl && (
-              <a
+              <Button
                 href={service.simulationUrl}
                 target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center space-x-1.5 bg-gradient-to-r from-teal-600 to-cyan-700 hover:from-teal-700 hover:to-cyan-800 text-white font-bold text-xs sm:text-sm px-5 py-3 rounded-xl shadow-md shadow-teal-700/20 hover:scale-105 transition-all"
+                variant="teal"
+                size="sm"
+                className="w-full sm:w-auto"
+                rightIcon={<ExternalLink className="w-3.5 h-3.5 opacity-80" />}
               >
-                <span>{service.simulationLabel || "Simule seu sorriso Invisalign"}</span>
-                <ExternalLink className="w-3.5 h-3.5 opacity-80" />
-              </a>
+                {service.simulationLabel || "Simule seu sorriso Invisalign"}
+              </Button>
             )}
 
-            <a
+            <Button
               href={whatsappUrl}
               target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-brand-700 to-brand-600 hover:from-brand-800 hover:to-brand-700 text-white font-bold text-xs sm:text-sm px-6 py-3 rounded-xl shadow-md shadow-brand-700/20 hover:scale-105 transition-all"
+              variant="primary"
+              size="sm"
+              className="w-full sm:w-auto"
+              leftIcon={<Calendar className="w-4 h-4" />}
+              rightIcon={<ArrowRight className="w-4 h-4" />}
             >
-              <Calendar className="w-4 h-4" />
-              <span>Quero este resultado</span>
-              <ArrowRight className="w-4 h-4" />
-            </a>
+              Quero este resultado
+            </Button>
           </div>
         </div>
 

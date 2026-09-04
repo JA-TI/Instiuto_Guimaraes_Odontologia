@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'next/link';
+import Button from '@/components/ui/Button';
 
 export default function NotFound() {
   return (
@@ -9,12 +9,13 @@ export default function NotFound() {
       <p className="text-slate-600 mb-6 max-w-md">
         A página que você procura não existe ou foi movida.
       </p>
-      <Link
+      <Button
         href="/"
-        className="px-6 py-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-semibold transition-colors shadow-md"
+        variant="primary"
+        size="md"
       >
         Voltar para a página inicial
-      </Link>
+      </Button>
     </div>
   );
 }

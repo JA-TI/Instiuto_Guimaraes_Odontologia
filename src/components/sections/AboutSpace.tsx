@@ -19,6 +19,7 @@ import {
   Navigation,
   ExternalLink
 } from 'lucide-react';
+import Button from '@/components/ui/Button';
 
 export default function AboutSpace() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -220,16 +221,17 @@ export default function AboutSpace() {
               </div>
             </div>
             
-            <a
+            <Button
               href={clinicInfo.address.googleMapsUrl}
               target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center space-x-1.5 text-xs font-bold text-brand-700 hover:text-white bg-brand-50 hover:bg-brand-600 py-2.5 px-3 rounded-xl transition-all duration-200 w-full text-center shadow-sm"
+              variant="outline"
+              size="sm"
+              fullWidth
+              leftIcon={<Navigation className="w-3.5 h-3.5" />}
+              rightIcon={<ExternalLink className="w-3 h-3 opacity-70" />}
             >
-              <Navigation className="w-3.5 h-3.5" />
-              <span>Ver no Google Maps</span>
-              <ExternalLink className="w-3 h-3 ml-0.5 opacity-70" />
-            </a>
+              Ver no Google Maps
+            </Button>
           </div>
         </div>
 
@@ -244,16 +246,17 @@ export default function AboutSpace() {
             </p>
           </div>
 
-          <a
+          <Button
             href={whatsappUrl}
             target="_blank"
-            rel="noopener noreferrer"
-            className="shrink-0 inline-flex items-center space-x-2 bg-gradient-to-r from-brand-400 to-cyan-400 hover:from-brand-300 hover:to-cyan-300 text-navy-950 font-bold text-sm px-6 py-3.5 rounded-xl shadow-lg shadow-cyan-500/20 hover:scale-105 transition-all"
+            variant="teal"
+            size="md"
+            className="shrink-0"
+            leftIcon={<Calendar className="w-4 h-4" />}
+            rightIcon={<ArrowRight className="w-4 h-4" />}
           >
-            <Calendar className="w-4 h-4" />
-            <span>Agendar Visita & Consulta</span>
-            <ArrowRight className="w-4 h-4" />
-          </a>
+            Agendar Visita & Consulta
+          </Button>
         </div>
 
       </div>
@@ -375,16 +378,16 @@ export default function AboutSpace() {
                 Fácil estacionamento no local • Bairro Santa Mônica, Uberlândia - MG
               </p>
               
-              <a
+              <Button
                 href={clinicInfo.address.googleMapsUrl}
                 target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center space-x-2 bg-gradient-to-r from-brand-600 to-cyan-600 hover:from-brand-500 hover:to-cyan-500 text-white font-bold text-xs sm:text-sm px-5 py-2.5 rounded-xl shadow-md shadow-brand-500/20 hover:scale-105 transition-all"
+                variant="primary"
+                size="sm"
+                leftIcon={<Navigation className="w-4 h-4" />}
+                rightIcon={<ExternalLink className="w-3.5 h-3.5 opacity-80" />}
               >
-                <Navigation className="w-4 h-4" />
-                <span>Abrir Rota no Google Maps</span>
-                <ExternalLink className="w-3.5 h-3.5 opacity-80" />
-              </a>
+                Abrir Rota no Google Maps
+              </Button>
             </div>
           </div>
         </div>

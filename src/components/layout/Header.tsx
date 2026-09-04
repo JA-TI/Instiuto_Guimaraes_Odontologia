@@ -13,6 +13,8 @@ import {
   ChevronRight
 } from 'lucide-react';
 
+import Button from '@/components/ui/Button';
+
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -28,10 +30,10 @@ export default function Header() {
   const navLinks = [
     { name: 'Início', href: '#inicio' },
     { name: 'Profissionais', href: '#profissionais' },
-    { name: 'O Espaço', href: '#espaco' },
     { name: 'Especialidades', href: '#especialidades' },
-    { name: 'Depoimentos', href: '#depoimentos' },
+    { name: 'O Espaço', href: '#espaco' },
     { name: 'Contato', href: '#contato' },
+    { name: 'Depoimentos', href: '#depoimentos' },
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -103,15 +105,16 @@ export default function Header() {
 
           {/* Action CTA */}
           <div className="hidden sm:flex items-center">
-            <a
+            <Button
               href={whatsappUrl}
               target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center space-x-2 bg-gradient-to-r from-brand-700 via-brand-600 to-brand-500 hover:from-brand-800 hover:to-brand-600 text-white font-bold text-xs sm:text-[14px] xl:text-[15px] px-5 sm:px-6 py-2.5 sm:py-3 rounded-full shadow-md shadow-brand-600/25 hover:shadow-lg hover:shadow-brand-600/35 hover:-translate-y-0.5 transition-all duration-200"
+              variant="primary"
+              shape="pill"
+              size="sm"
+              leftIcon={<Calendar className="w-4 h-4" />}
             >
-              <Calendar className="w-4 h-4" />
-              <span>Agendar Consulta</span>
-            </a>
+              Agendar Consulta
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -143,23 +146,26 @@ export default function Header() {
             </div>
 
             <div className="mt-5 pt-4 border-t border-slate-200 space-y-2.5">
-              <a
+              <Button
                 href={whatsappUrl}
                 target="_blank"
-                rel="noopener noreferrer"
-                className="w-full flex items-center justify-center space-x-2 bg-gradient-to-r from-brand-700 to-brand-500 text-white font-bold text-sm py-3.5 px-4 rounded-xl shadow-md shadow-brand-500/20"
+                variant="primary"
+                fullWidth
+                size="md"
+                leftIcon={<Calendar className="w-4 h-4" />}
               >
-                <Calendar className="w-4 h-4" />
-                <span>Agendar Avaliação via WhatsApp</span>
-              </a>
+                Agendar Avaliação via WhatsApp
+              </Button>
 
-              <a
+              <Button
                 href={`tel:${clinicInfo.phone.replace(/\D/g, '')}`}
-                className="w-full flex items-center justify-center space-x-2 bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold text-sm py-3 px-4 rounded-xl transition-colors"
+                variant="secondary"
+                fullWidth
+                size="md"
+                leftIcon={<Phone className="w-4 h-4 text-brand-700" />}
               >
-                <Phone className="w-4 h-4 text-brand-700" />
-                <span>Ligar: {clinicInfo.phone}</span>
-              </a>
+                Ligar: {clinicInfo.phone}
+              </Button>
             </div>
           </div>
         )}

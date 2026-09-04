@@ -20,17 +20,17 @@ export default function Home() {
       {/* Clinical Team / Specialists */}
       <Professionals />
 
-      {/* Infrastructure & Clinic Space */}
-      <AboutSpace />
-
       {/* Treatments & Specialties */}
       <Services />
 
-      {/* Social Proof / Google Reviews */}
-      <Testimonials />
+      {/* Infrastructure & Clinic Space */}
+      <AboutSpace />
 
       {/* High-Conversion Closing Banner */}
       <CtaBanner />
+
+      {/* Social Proof / Google Reviews */}
+      <Testimonials />
 
       {/* Comprehensive Corporate Footer */}
       <Footer />
