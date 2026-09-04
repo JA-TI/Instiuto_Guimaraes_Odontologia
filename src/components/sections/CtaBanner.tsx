@@ -22,7 +22,7 @@ export default function CtaBanner() {
   return (
     <section 
       id="contato" 
-      className="relative py-24 lg:py-32 overflow-hidden bg-slate-950 text-white scroll-mt-20 lg:scroll-mt-24 bg-fixed bg-center bg-cover bg-no-repeat"
+      className="relative py-24 lg:py-32 overflow-hidden bg-slate-950 text-white scroll-mt-20 lg:scroll-mt-24 bg-cover bg-center bg-no-repeat bg-scroll md:bg-fixed"
       style={{ backgroundImage: "url('/images/cta-bg.jpg')" }}
     >
       {/* Overlays for depth and readability */}

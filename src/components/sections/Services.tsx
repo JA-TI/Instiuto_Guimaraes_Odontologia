@@ -16,7 +16,7 @@ export default function Services() {
   return (
     <section 
       id="especialidades" 
-      className="relative py-24 overflow-hidden scroll-mt-20 lg:scroll-mt-24 bg-fixed bg-center bg-cover bg-no-repeat"
+      className="relative py-24 overflow-hidden scroll-mt-20 lg:scroll-mt-24 bg-cover bg-center bg-no-repeat bg-scroll md:bg-fixed"
       style={{ backgroundImage: "url('/images/services-bg.jpg')" }}
     >
       {/* Parallax Overlay to keep photo visible while ensuring optimal contrast */}
