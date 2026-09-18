@@ -17,6 +17,12 @@ export const viewport: Viewport = {
   maximumScale: 5,
 };
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : 'https://instiuto-guimaraes-odontologia.vercel.app');
+
 export const metadata: Metadata = {
   title: 'IGO Odonto | Instituto Guimarães de Odontologia - Desde 1991 em Uberlândia',
   description: 'Clínica odontológica de alto padrão em Uberlândia. Especialistas em Invisalign, Implantes Dentários, Ortodontia e Estética do Sorriso. Dra. Ana Lúcia Guimarães (CRO-MG 15381) e Dr. Fernando Guimarães (CRO-MG 16129).',
@@ -33,10 +39,10 @@ export const metadata: Metadata = {
     'Dra Ana Lúcia Guimarães dentista',
     'Clareamento Dental Uberlândia'
   ],
-  authors: [{ name: 'Instituto Guimarães de Odontologia', url: 'https://igoodonto.com.br' }],
+  authors: [{ name: 'Instituto Guimarães de Odontologia', url: siteUrl }],
   creator: 'IGO Odonto',
   publisher: 'IGO Odonto',
-  metadataBase: new URL('https://igoodonto.com.br'),
+  metadataBase: new URL(siteUrl),
   alternates: {
     canonical: '/',
   },
@@ -54,7 +60,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'IGO Odonto | Instituto Guimarães de Odontologia',
     description: 'Transformando sorrisos com tecnologia 3D, conforto e mais de 30 anos de tradição em Uberlândia.',
-    url: 'https://instiuto-guimaraes-odontologia.vercel.app/',
+    url: siteUrl,
     siteName: 'IGO Odonto',
     locale: 'pt_BR',
     type: 'website',
@@ -63,6 +69,7 @@ export const metadata: Metadata = {
         url: '/images/og-image.png',
         width: 1200,
         height: 630,
+        type: 'image/png',
         alt: 'IGO Odonto - Instituto Guimarães de Odontologia',
       },
     ],
