@@ -52,3 +52,34 @@ body {
     text-wrap: balance;
   }
 }
+
+/* Lightbox Photo Transition Animations */
+@keyframes modalSlideNext {
+  0% {
+    opacity: 0;
+    transform: translateX(40px) scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes modalSlidePrev {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px) scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+.animate-modal-next {
+  animation: modalSlideNext 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-modal-prev {
+  animation: modalSlidePrev 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}

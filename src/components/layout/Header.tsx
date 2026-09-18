@@ -61,12 +61,18 @@ export default function Header() {
       {/* Main Navbar */}
       <nav
         className={`transition-all duration-300 ${
-          isScrolled
-            ? 'bg-white/95 backdrop-blur-md shadow-md py-2.5 sm:py-3 border-b border-slate-100'
-            : 'bg-white/90 backdrop-blur-sm py-3.5 sm:py-4 border-b border-white/20'
+          mobileMenuOpen
+            ? 'bg-white shadow-xl border-b border-slate-100'
+            : isScrolled
+            ? 'bg-white/95 backdrop-blur-md shadow-md border-b border-slate-100'
+            : 'bg-white/90 backdrop-blur-sm border-b border-white/20'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        <div
+          className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between transition-all duration-300 ${
+            isScrolled ? 'py-2.5 sm:py-3' : 'py-3.5 sm:py-4'
+          }`}
+        >
           {/* Logo */}
           <a 
             href="#inicio" 
@@ -130,7 +136,7 @@ export default function Header() {
 
         {/* Mobile Dropdown Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-white/98 backdrop-blur-xl border-t border-slate-100 shadow-xl px-4 pt-3 pb-6 animate-fade-in">
+          <div className="lg:hidden bg-white border-t border-slate-100 px-4 pt-3 pb-6 animate-fade-in">
             <div className="space-y-1 divide-y divide-slate-100/80">
               {navLinks.map((link) => (
                 <a

@@ -54,16 +54,16 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'IGO Odonto | Instituto Guimarães de Odontologia',
     description: 'Transformando sorrisos com tecnologia 3D, conforto e mais de 30 anos de tradição em Uberlândia.',
-    url: 'https://igoodonto.com.br',
+    url: 'https://instiuto-guimaraes-odontologia.vercel.app/',
     siteName: 'IGO Odonto',
     locale: 'pt_BR',
     type: 'website',
     images: [
       {
-        url: '/images/clinic/IGO-Frente.jpeg',
+        url: '/images/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Instituto Guimarães de Odontologia - Fachada e Clínica',
+        alt: 'IGO Odonto - Instituto Guimarães de Odontologia',
       },
     ],
   },
@@ -71,11 +71,14 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'IGO Odonto | Instituto Guimarães de Odontologia',
     description: 'Transformando sorrisos com tecnologia 3D, conforto e mais de 30 anos de tradição em Uberlândia.',
-    images: ['/images/clinic/IGO-Frente.jpeg'],
+    images: ['/images/og-image.png'],
   },
   icons: {
-    icon: '/images/logo/igo-logo.svg',
-    apple: '/images/logo/igo-logo.svg',
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.png', type: 'image/png' }
+    ],
+    apple: '/favicon.png',
   }
 };
 
@@ -173,6 +176,25 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`${plusJakartaSans.variable}`}>
       <head>
+        {/* Preload hero posters for instant LCP score on PageSpeed */}
+        <link
+          rel="preload"
+          as="image"
+          href="/images/hero_poster_mobile.webp"
+          media="(max-width: 767px)"
+          type="image/webp"
+          // @ts-expect-error fetchpriority is standard in modern browsers
+          fetchpriority="high"
+        />
+        <link
+          rel="preload"
+          as="image"
+          href="/images/hero_poster_desktop.webp"
+          media="(min-width: 768px)"
+          type="image/webp"
+          // @ts-expect-error fetchpriority is standard in modern browsers
+          fetchpriority="high"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}

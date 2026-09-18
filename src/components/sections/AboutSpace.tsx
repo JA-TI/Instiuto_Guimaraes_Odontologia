@@ -1,7 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
-import Image from 'next/image';
+import React, { useState } from 'react';
 import { clinicPhotos, spaceHighlights } from '@/data/gallery';
 import { clinicInfo } from '@/data/clinicInfo';
 import { formatWhatsAppUrl } from '@/lib/utils';
@@ -10,8 +9,6 @@ import {
   MapPin, 
   Clock, 
   Snowflake,
-  ChevronLeft, 
-  ChevronRight,
   Calendar,
   ArrowRight,
   Maximize2,
@@ -20,50 +17,15 @@ import {
   ExternalLink
 } from 'lucide-react';
 import Button from '@/components/ui/Button';
+import SpotlightCarousel from '@/components/ui/SpotlightCarousel';
 
 export default function AboutSpace() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [isMapModalOpen, setIsMapModalOpen] = useState(false);
-  const carouselRef = useRef<HTMLDivElement>(null);
 
   const whatsappUrl = formatWhatsAppUrl(
     clinicInfo.whatsappRaw,
     'Olá! Gostaria de agendar uma visita para conhecer o espaço da iGoodonto.'
   );
-
-  const totalPhotos = clinicPhotos.length;
-
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % totalPhotos);
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + totalPhotos) % totalPhotos);
-  };
-
-  const nextLightbox = (e?: React.MouseEvent) => {
-    e?.stopPropagation();
-    setLightboxIndex((prev) => (prev !== null ? (prev + 1) % totalPhotos : 0));
-  };
-
-  const prevLightbox = (e?: React.MouseEvent) => {
-    e?.stopPropagation();
-    setLightboxIndex((prev) => (prev !== null ? (prev - 1 + totalPhotos) % totalPhotos : 0));
-  };
-
-  // Keyboard navigation for lightbox
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (lightboxIndex === null) return;
-      if (e.key === 'Escape') setLightboxIndex(null);
-      if (e.key === 'ArrowRight') setLightboxIndex((prev) => (prev !== null ? (prev + 1) % totalPhotos : 0));
-      if (e.key === 'ArrowLeft') setLightboxIndex((prev) => (prev !== null ? (prev - 1 + totalPhotos) % totalPhotos : 0));
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [lightboxIndex, totalPhotos]);
 
   const getHighlightIcon = (iconName: string) => {
     switch (iconName) {
@@ -78,14 +40,12 @@ export default function AboutSpace() {
     }
   };
 
-  const currentPhoto = clinicPhotos[currentIndex];
-
   return (
     <section id="espaco" className="py-24 bg-slate-50 relative overflow-hidden scroll-mt-20 lg:scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14 space-y-4">
+        <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-navy-950 tracking-tight">
             Um espaço projetado para o seu{' '}
             <span className="bg-gradient-to-r from-brand-700 to-cyan-500 bg-clip-text text-transparent">
@@ -98,81 +58,9 @@ export default function AboutSpace() {
           </p>
         </div>
 
-        {/* Carousel Showcase Container */}
-        <div 
-          className="relative max-w-5xl mx-auto mb-16"
-          ref={carouselRef}
-        >
-          {/* Main Slide Card - Full Photo Display - Clickable to open Modal */}
-          <div 
-            onClick={() => setLightboxIndex(currentIndex)}
-            className="relative rounded-3xl overflow-hidden shadow-2xl bg-navy-950 border border-slate-200/80 h-[400px] sm:h-[500px] lg:h-[580px] w-full flex items-center justify-center group cursor-pointer"
-            title="Clique para ampliar a foto"
-          >
-            {/* Ambient Blurred Background to Fill the Frame Elegantly */}
-            <div className="absolute inset-0 overflow-hidden opacity-30 blur-2xl scale-110 pointer-events-none">
-              <Image
-                src={currentPhoto.image}
-                alt=""
-                fill
-                sizes="100vw"
-                quality={75}
-                className="object-cover"
-              />
-            </div>
-
-            {/* Crisp Uncropped Foreground Photo */}
-            <div className="relative w-full h-full p-2 sm:p-4 z-10 flex items-center justify-center">
-              <Image
-                src={currentPhoto.image}
-                alt={currentPhoto.title}
-                fill
-                priority
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1024px"
-                quality={85}
-                className="object-contain"
-              />
-            </div>
-
-            {/* Nav Arrows inside slide */}
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                prevSlide();
-              }}
-              className="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-navy-950/70 hover:bg-brand-600 text-white backdrop-blur-md border border-white/20 flex items-center justify-center transition-all hover:scale-110 shadow-lg"
-              aria-label="Foto anterior"
-            >
-              <ChevronLeft className="w-6 h-6" />
-            </button>
-
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                nextSlide();
-              }}
-              className="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-navy-950/70 hover:bg-brand-600 text-white backdrop-blur-md border border-white/20 flex items-center justify-center transition-all hover:scale-110 shadow-lg"
-              aria-label="Próxima foto"
-            >
-              <ChevronRight className="w-6 h-6" />
-            </button>
-          </div>
-
-          {/* Dots Indicator */}
-          <div className="flex items-center justify-center space-x-2 mt-6">
-            {clinicPhotos.map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => setCurrentIndex(idx)}
-                className={`h-2.5 rounded-full transition-all duration-300 ${
-                  idx === currentIndex 
-                    ? 'w-8 bg-brand-600' 
-                    : 'w-2.5 bg-slate-300 hover:bg-slate-400'
-                }`}
-                aria-label={`Ir para o slide ${idx + 1}`}
-              />
-            ))}
-          </div>
+        {/* Spotlight Carousel */}
+        <div className="mb-16">
+          <SpotlightCarousel items={clinicPhotos} />
         </div>
 
         {/* Highlights Row */}
@@ -260,67 +148,6 @@ export default function AboutSpace() {
         </div>
 
       </div>
-
-      {/* Fullscreen Lightbox Modal */}
-      {lightboxIndex !== null && clinicPhotos[lightboxIndex] && (
-        <div 
-          className="fixed inset-0 z-50 bg-black/95 backdrop-blur-md flex flex-col items-center justify-center p-2 sm:p-6 select-none"
-          onClick={() => setLightboxIndex(null)}
-        >
-          {/* Top Bar with Counter & Close Button */}
-          <div 
-            className="w-full max-w-6xl flex items-center justify-between text-white p-2 sm:p-4 z-20 absolute top-0 left-0 right-0 mx-auto"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <span className="text-xs sm:text-sm font-semibold text-slate-300 bg-black/50 px-3 py-1.5 rounded-full border border-white/10 backdrop-blur-md">
-              {lightboxIndex + 1} / {totalPhotos}
-            </span>
-
-            <button
-              onClick={() => setLightboxIndex(null)}
-              className="p-2 sm:p-2.5 rounded-full bg-black/50 hover:bg-white/20 active:bg-white/30 text-white border border-white/20 transition-all hover:scale-105 backdrop-blur-md"
-              aria-label="Fechar tela cheia"
-            >
-              <X className="w-5 h-5 sm:w-6 sm:h-6" />
-            </button>
-          </div>
-
-          {/* Main Photo Area (Full Height) */}
-          <div 
-            className="relative w-full flex-1 max-w-6xl max-h-[88vh] sm:max-h-[90vh] flex items-center justify-center my-auto"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Nav Arrows inside Modal */}
-            <button
-              onClick={prevLightbox}
-              className="absolute left-2 sm:left-4 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-brand-600 text-white backdrop-blur-md border border-white/20 flex items-center justify-center transition-all hover:scale-110 shadow-xl"
-              aria-label="Foto anterior"
-            >
-              <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
-            </button>
-
-            <button
-              onClick={nextLightbox}
-              className="absolute right-2 sm:right-4 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-brand-600 text-white backdrop-blur-md border border-white/20 flex items-center justify-center transition-all hover:scale-110 shadow-xl"
-              aria-label="Próxima foto"
-            >
-              <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
-            </button>
-
-            {/* Photo Container */}
-            <div className="relative w-full h-full flex items-center justify-center">
-              <Image
-                src={clinicPhotos[lightboxIndex].image}
-                alt={clinicPhotos[lightboxIndex].title}
-                fill
-                priority
-                className="object-contain"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
-              />
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* Large Map Modal */}
       {isMapModalOpen && (

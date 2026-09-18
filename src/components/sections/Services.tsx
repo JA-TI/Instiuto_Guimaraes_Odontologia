@@ -55,22 +55,22 @@ export default function Services() {
             return (
               <div
                 key={service.id}
-                className="group relative bg-slate-900/90 backdrop-blur-xl rounded-3xl overflow-hidden border border-slate-700/50 shadow-2xl hover:border-cyan-400/60 hover:shadow-cyan-950/50 transition-all duration-300 flex flex-col justify-between"
+                className="relative bg-slate-900/40 backdrop-blur-xl rounded-3xl overflow-hidden border border-white/15 shadow-2xl shadow-black/40 flex flex-col justify-between"
               >
                 <div>
                   {/* Card Image with smooth bottom gradient fade */}
-                  <div className="relative h-48 sm:h-52 w-full bg-slate-950 overflow-hidden">
+                  <div className="relative h-48 sm:h-52 w-full bg-slate-950/40 overflow-hidden">
                     <Image
                       src={service.image}
                       alt={service.title}
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       quality={85}
-                      className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                      className="object-cover object-center"
                     />
                     
-                    {/* Seamless fade to card body */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-black/20" />
+                    {/* Seamless translucent fade to card body */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-black/30" />
 
                     {/* Simulation Button directly over image */}
                     {service.simulationUrl && (
@@ -91,7 +91,7 @@ export default function Services() {
 
                   {/* Card Title */}
                   <div className="p-5 sm:p-6 text-center">
-                    <h3 className="text-xl font-display font-bold text-white group-hover:text-cyan-300 transition-colors leading-snug">
+                    <h3 className="text-xl font-display font-bold text-white leading-snug drop-shadow-md">
                       {service.title}
                     </h3>
                   </div>
@@ -101,9 +101,10 @@ export default function Services() {
                 <div className="p-5 pt-0 space-y-2.5">
                   <Button
                     onClick={() => setSelectedService(service)}
-                    variant="subtle"
+                    variant="outlineWhite"
                     size="sm"
                     fullWidth
+                    className="bg-white/10 hover:bg-white/20 border-white/20 hover:border-white/40 text-white font-medium shadow-sm backdrop-blur-md"
                   >
                     Ver antes e depois do tratamento
                   </Button>
@@ -115,6 +116,7 @@ export default function Services() {
                     size="sm"
                     fullWidth
                     leftIcon={<Calendar className="w-3.5 h-3.5" />}
+                    className="shadow-lg shadow-brand-500/25 font-bold"
                   >
                     Agendar este Tratamento
                   </Button>
