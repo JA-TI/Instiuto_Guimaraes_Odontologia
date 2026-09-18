@@ -40,17 +40,17 @@ export default function Footer() {
             <div className="flex items-center">
               <div className="relative h-20 sm:h-24 w-auto flex items-center">
                 <Image
-                  src="/images/logo/igo-logo.svg"
+                  src="/images/logo/igo-logo.png"
                   alt="Instituto Guimarães de Odontologia"
                   width={170}
                   height={100}
-                  unoptimized
+                  quality={85}
                   className="h-20 sm:h-24 w-auto object-contain drop-shadow-md"
                 />
               </div>
             </div>
 
-            <p className="text-sm text-slate-400 leading-relaxed">
+            <p className="text-sm text-slate-300 leading-relaxed">
               Tradição, excelência e tecnologia de ponta dedicadas a criar sorrisos saudáveis e harmônicos desde 1991 em Uberlândia. Atendimento humanizado e especialistas em Ortodontia, Implantes e Estética.
             </p>
 
@@ -229,14 +229,14 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar: Copyright and Badges */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-300 gap-4">
           <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-6 text-center sm:text-left">
             <p>© {new Date().getFullYear()} Instituto Guimarães de Odontologia (iGoodonto). Todos os direitos reservados.</p>
-            <span className="hidden sm:inline text-slate-700">•</span>
+            <span className="hidden sm:inline text-slate-600">•</span>
             <p>Dra. Ana Lúcia (CRO-MG 15381) | Dr. Fernando César (CRO-MG 16129)</p>
           </div>
 
-          <div className="flex items-center space-x-1 text-slate-400">
+          <div className="flex items-center space-x-1 text-slate-300">
             <span>Cuidado de alto padrão para o seu sorriso</span>
             <Heart className="w-3.5 h-3.5 text-cyan-400 fill-cyan-400 ml-1" />
           </div>

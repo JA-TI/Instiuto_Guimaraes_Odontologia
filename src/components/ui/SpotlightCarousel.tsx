@@ -223,7 +223,7 @@ export default function SpotlightCarousel({ items }: SpotlightCarouselProps) {
                 style={{
                   width: `${cardWidth}px`,
                   height: `${dims.height}px`,
-                  transition: 'width 600ms cubic-bezier(0.25, 1, 0.5, 1), opacity 500ms ease',
+                  transition: isDragging ? 'none' : 'opacity 400ms ease',
                 }}
                 className={`relative flex-shrink-0 rounded-2xl sm:rounded-3xl overflow-hidden cursor-pointer group ${
                   isActive
@@ -274,18 +274,23 @@ export default function SpotlightCarousel({ items }: SpotlightCarouselProps) {
       </div>
 
       {/* Dots Indicator */}
-      <div className="flex items-center justify-center space-x-2 mt-6 sm:mt-8">
+      <div className="flex items-center justify-center space-x-1 mt-6 sm:mt-8">
         {items.map((_, idx) => (
           <button
             key={idx}
+            type="button"
             onClick={() => goToSlide(idx)}
-            className={`h-2.5 rounded-full transition-all duration-300 ${
-              idx === activeIndex
-                ? 'w-8 bg-brand-600'
-                : 'w-2.5 bg-slate-300 hover:bg-slate-400'
-            }`}
+            className="p-2 inline-flex items-center justify-center cursor-pointer rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
             aria-label={`Ir para a foto ${idx + 1}`}
-          />
+          >
+            <span
+              className={`h-2.5 rounded-full transition-all duration-300 block ${
+                idx === activeIndex
+                  ? 'w-8 bg-brand-600'
+                  : 'w-2.5 bg-slate-300 hover:bg-slate-400'
+              }`}
+            />
+          </button>
         ))}
       </div>
 

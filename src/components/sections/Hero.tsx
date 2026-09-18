@@ -19,42 +19,52 @@ export default function Hero() {
 
   return (
     <section id="inicio" className="relative min-h-[100dvh] lg:min-h-screen pt-24 pb-6 sm:pb-8 lg:pb-10 overflow-hidden flex flex-col justify-end bg-navy-950">
-      {/* Background Video (Seamless Responsive Boomerang Loop) with Clean Overlay */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        {/* Mobile Vertical 9:16 Video (Fills entire screen without cutting the logo) */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-          poster="/images/hero_poster_mobile.webp"
-          disablePictureInPicture
-          disableRemotePlayback
-          className="block md:hidden w-full h-full object-cover object-center"
-        >
-          <source src="/images/hero_animation_mobile_loop.webm" type="video/webm" />
-          <source src="/images/hero_animation_mobile_loop.mp4" type="video/mp4" />
-        </video>
+      {/* Background Video (Seamless Responsive Loop) with Clean Overlay */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none bg-navy-950" aria-hidden="true">
+        {/* Mobile Vertical Poster / Video */}
+        <div className="block md:hidden absolute inset-0" aria-hidden="true">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="none"
+            poster="/images/hero_poster_mobile.webp"
+            disablePictureInPicture
+            disableRemotePlayback
+            tabIndex={-1}
+            aria-hidden="true"
+            className="w-full h-full object-cover object-center"
+          >
+            <source src="/images/hero_animation_mobile_loop.webm" type="video/webm" />
+            <source src="/images/hero_animation_mobile_loop.mp4" type="video/mp4" />
+            <track kind="captions" srcLang="pt-BR" label="Sem áudio" />
+          </video>
+        </div>
 
-        {/* Desktop / Tablet Widescreen 16:9 Video */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-          poster="/images/hero_poster_desktop.webp"
-          disablePictureInPicture
-          disableRemotePlayback
-          className="hidden md:block w-full h-full object-cover object-[center_35%] scale-105 origin-center"
-        >
-          <source src="/images/hero_animation_loop.webm" type="video/webm" />
-          <source src="/images/hero_animation_loop.mp4" type="video/mp4" />
-        </video>
+        {/* Desktop / Tablet Widescreen Poster / Video */}
+        <div className="hidden md:block absolute inset-0" aria-hidden="true">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="none"
+            poster="/images/hero_poster_desktop.webp"
+            disablePictureInPicture
+            disableRemotePlayback
+            tabIndex={-1}
+            aria-hidden="true"
+            className="w-full h-full object-cover object-[center_35%] scale-105 origin-center"
+          >
+            <source src="/images/hero_animation_loop.webm" type="video/webm" />
+            <source src="/images/hero_animation_loop.mp4" type="video/mp4" />
+            <track kind="captions" srcLang="pt-BR" label="Sem áudio" />
+          </video>
+        </div>
 
         {/* Focused gradient only at the lower area for text legibility, keeping the rest completely natural */}
-        <div className="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/45 via-25% to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/45 via-25% to-transparent" aria-hidden="true" />
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col items-center justify-end text-center mt-auto pb-2 sm:pb-0">

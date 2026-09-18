@@ -56,8 +56,8 @@ export default function Professionals() {
                       src={doctor.image}
                       alt={doctor.name}
                       fill
-                      quality={85}
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      quality={75}
+                      sizes="(max-width: 640px) 340px, (max-width: 1024px) 450px, 380px"
                       className="object-cover object-top"
                     />
                   </div>
@@ -89,7 +89,11 @@ export default function Professionals() {
                     fullWidth
                     leftIcon={<Calendar className="w-4 h-4" />}
                   >
-                    Agendar com {doctor.name.split(' ')[0]} {doctor.name.split(' ')[1]}
+                    {doctor.id === 'dra-ana-lucia'
+                      ? 'Agendar com Dra. Ana Lúcia'
+                      : doctor.id === 'dra-ana-julia'
+                      ? 'Agendar com Dra. Ana Júlia'
+                      : 'Agendar com Dr. Fernando César'}
                   </Button>
 
                   {doctor.doctoraliaUrl && (

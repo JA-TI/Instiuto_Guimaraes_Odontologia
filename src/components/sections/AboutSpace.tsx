@@ -74,9 +74,9 @@ export default function AboutSpace() {
                 <div className="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center border border-brand-100 mb-3">
                   {getHighlightIcon(highlight.icon)}
                 </div>
-                <h4 className="font-display font-bold text-base text-navy-900 leading-snug">
+                <h3 className="font-display font-bold text-base text-navy-900 leading-snug">
                   {highlight.title}
-                </h4>
+                </h3>
                 <p className="text-xs text-slate-600 leading-relaxed mt-2">
                   {highlight.description}
                 </p>

@@ -27,7 +27,7 @@ export default function CtaBanner() {
       {/* Fixed background layer for seamless mobile & desktop parallax without address bar resize jumps */}
       <div 
         className="fixed top-0 left-0 w-full h-[100lvh] min-h-screen pointer-events-none bg-cover bg-center bg-no-repeat will-change-transform [transform:translateZ(0)]"
-        style={{ backgroundImage: "url('/images/cta-bg.jpg')" }}
+        style={{ backgroundImage: "url('/images/cta-bg.webp')" }}
       />
       {/* Overlays for depth and readability */}
       <div className="absolute inset-0 bg-slate-950/65 backdrop-brightness-90 pointer-events-none" />

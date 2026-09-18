@@ -36,15 +36,15 @@ export const servicesData: Service[] = [
       "Opção de carga imediata com dentes fixos"
     ],
     beforeAfter: {
-      beforeImage: "/images/treatments/implantes_dentarios/implantes_dentarios_antes.jpg",
-      afterImage: "/images/treatments/implantes_dentarios/implantes_dentarios_depois.jpg",
+      beforeImage: "/images/treatments/implantes_dentarios/implantes_dentarios_antes.webp",
+      afterImage: "/images/treatments/implantes_dentarios/implantes_dentarios_depois.webp",
       patientCase: "Reabilitação definitiva com implante guiado e coroa em cerâmica",
       duration: "Carga imediata e finalização estética",
       resultSummary: "Restauração completa da segurança mastigatória com estética idêntica aos dentes naturais."
     },
     iconName: "ShieldCheck",
     featured: true,
-    image: "/images/treatments/implantes_dentarios/implantes_dentarios_img.jpg",
+    image: "/images/treatments/implantes_dentarios/implantes_dentarios_img.webp",
     badge: "Alta Tecnologia"
   },
   {
@@ -60,8 +60,8 @@ export const servicesData: Service[] = [
       "Consultas mais ágeis e menos desconforto"
     ],
     beforeAfter: {
-      beforeImage: "/images/treatments/invisalign/invisalign_antes.jpg",
-      afterImage: "/images/treatments/invisalign/invisalign_depois.jpg",
+      beforeImage: "/images/treatments/invisalign/invisalign_antes.webp",
+      afterImage: "/images/treatments/invisalign/invisalign_depois.webp",
       patientCase: "Correção de apinhamento dentário com alinhadores invisíveis",
       duration: "Tratamento ortodôntico digital",
       resultSummary: "Sorriso perfeitamente alinhado, nivelado e discreto do início ao fim."
@@ -70,7 +70,7 @@ export const servicesData: Service[] = [
     simulationLabel: "Simule seu sorriso Invisalign",
     iconName: "Sparkles",
     featured: true,
-    image: "/images/treatments/invisalign/invisalign_img.jpg",
+    image: "/images/treatments/invisalign/invisalign_img.webp",
     badge: "Mais Procurado"
   },
   {
@@ -86,15 +86,15 @@ export const servicesData: Service[] = [
       "Manutenção da saúde bucal e proteção sistêmica"
     ],
     beforeAfter: {
-      beforeImage: "/images/treatments/periodontia/Periodontia_antes.jpg",
-      afterImage: "/images/treatments/periodontia/Periodontia_depois.jpg",
+      beforeImage: "/images/treatments/periodontia/Periodontia_antes.webp",
+      afterImage: "/images/treatments/periodontia/Periodontia_depois.webp",
       patientCase: "Tratamento periodontal especializado e plástica do contorno gengival",
       duration: "Tratamento personalizado",
       resultSummary: "Saúde gengival restabelecida, eliminação de sangramentos e contorno estético harmônico."
     },
     iconName: "HeartPulse",
     featured: false,
-    image: "/images/treatments/periodontia/Periodontia_img.jpg"
+    image: "/images/treatments/periodontia/Periodontia_img.webp"
   },
   {
     id: "clareamento-dental",
@@ -109,15 +109,15 @@ export const servicesData: Service[] = [
       "Acompanhamento direto por especialista"
     ],
     beforeAfter: {
-      beforeImage: "/images/treatments/Clareamento_dental/Clareamento_dental_antes.jpg",
-      afterImage: "/images/treatments/Clareamento_dental/Clareamento_dental_depois.jpg",
+      beforeImage: "/images/treatments/Clareamento_dental/Clareamento_dental_antes.webp",
+      afterImage: "/images/treatments/Clareamento_dental/Clareamento_dental_depois.webp",
       patientCase: "Clareamento supervisionado a laser para remoção de pigmentações",
       duration: "2 sessões em consultório + kit domiciliar",
       resultSummary: "Sorriso visivelmente mais claro, brilhante e radiante sem qualquer sensibilidade."
     },
     iconName: "Sun",
     featured: true,
-    image: "/images/treatments/Clareamento_dental/Clareamento_dental_img.jpg",
+    image: "/images/treatments/Clareamento_dental/Clareamento_dental_img.webp",
     badge: "Resultado Rápido"
   },
   {
@@ -133,15 +133,15 @@ export const servicesData: Service[] = [
       "Hálito fresco e gengivas saudáveis"
     ],
     beforeAfter: {
-      beforeImage: "/images/treatments/limpeza_bucal/limpezaBucal_antes.jpg",
-      afterImage: "/images/treatments/limpeza_bucal/limpezaBucal_depois.jpg",
+      beforeImage: "/images/treatments/limpeza_bucal/limpezaBucal_antes.webp",
+      afterImage: "/images/treatments/limpeza_bucal/limpezaBucal_depois.webp",
       patientCase: "Profilaxia profunda com remoção de tártaro e manchas superficiais",
       duration: "Sessão única preventiva",
       resultSummary: "Eliminação total de biofilme e manchas, garantindo dentes limpos, lisos e saúde gengival."
     },
     iconName: "Activity",
     featured: false,
-    image: "/images/treatments/limpeza_bucal/limpezaBucal_img.jpg"
+    image: "/images/treatments/limpeza_bucal/limpezaBucal_img.webp"
   },
   {
     id: "aparelhos-ortodonticos",
@@ -156,14 +156,14 @@ export const servicesData: Service[] = [
       "Melhoria na mastigação, fala e harmonia do rosto"
     ],
     beforeAfter: {
-      beforeImage: "/images/treatments/aparelho/aparelho_antes.jpg",
-      afterImage: "/images/treatments/aparelho/aparelho_depois.jpg",
+      beforeImage: "/images/treatments/aparelho/aparelho_antes.webp",
+      afterImage: "/images/treatments/aparelho/aparelho_depois.webp",
       patientCase: "Correção de apinhamento e alinhamento ortodôntico completo",
       duration: "Tratamento ortodôntico personalizado",
       resultSummary: "Oclusão restabelecida, nivelamento da arcada e sorriso perfeitamente alinhado e harmônico."
     },
     iconName: "Smile",
     featured: false,
-    image: "/images/treatments/aparelho/aparelho_img.jpg"
+    image: "/images/treatments/aparelho/aparelho_img.webp"
   }
 ];

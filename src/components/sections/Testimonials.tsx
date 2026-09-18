@@ -115,7 +115,7 @@ export default function Testimonials() {
                 </div>
 
                 {/* Stars */}
-                <div className="flex items-center space-x-0.5 pt-0.5" aria-label={`Avaliação de ${review.rating} de 5 estrelas`}>
+                <div role="img" className="flex items-center space-x-0.5 pt-0.5" aria-label={`Avaliação de ${review.rating} de 5 estrelas`}>
                   {[...Array(review.rating)].map((_, i) => (
                     <GoldStar key={i} className="w-4 h-4" />
                   ))}

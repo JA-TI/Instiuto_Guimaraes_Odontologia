@@ -82,13 +82,12 @@ export default function Header() {
           >
             <div className="relative h-12 sm:h-14 lg:h-16 w-auto flex items-center">
               <Image
-                src="/images/logo/igo-logo.svg"
+                src="/images/logo/igo-logo.png"
                 alt="iGoodonto - Instituto Guimarães de Odontologia"
                 width={170}
                 height={80}
                 priority
-                quality={100}
-                unoptimized
+                quality={85}
                 className="h-12 sm:h-14 lg:h-16 w-auto object-contain drop-shadow-sm transition-transform duration-200 group-hover:scale-[1.02]"
               />
             </div>

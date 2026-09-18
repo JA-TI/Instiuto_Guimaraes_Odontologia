@@ -21,7 +21,7 @@ export default function Services() {
       {/* Fixed background layer for seamless mobile & desktop parallax without address bar resize jumps */}
       <div 
         className="fixed top-0 left-0 w-full h-[100lvh] min-h-screen pointer-events-none bg-cover bg-center bg-no-repeat will-change-transform [transform:translateZ(0)]"
-        style={{ backgroundImage: "url('/images/services-bg.jpg')" }}
+        style={{ backgroundImage: "url('/images/services-bg.webp')" }}
       />
 
       {/* Parallax Overlay to keep photo visible while ensuring optimal contrast */}
@@ -64,8 +64,8 @@ export default function Services() {
                       src={service.image}
                       alt={service.title}
                       fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      quality={85}
+                      sizes="(max-width: 640px) 360px, (max-width: 1024px) 480px, 380px"
+                      quality={75}
                       className="object-cover object-center"
                     />
                     

@@ -7,8 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "optimize:images": "node scripts/optimize-images.mjs"
+    "optimize:images": "node scripts/optimize-assets.mjs"
   },
+  "browserslist": [
+    "defaults and fully supports es6-module",
+    "not dead"
+  ],
   "dependencies": {
     "clsx": "^2.1.1",
     "lucide-react": "^0.475.0",
