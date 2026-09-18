@@ -76,6 +76,8 @@ export default function ServiceModal({ service, onClose }: ServiceModalProps) {
                 src={afterImg}
                 alt={`Depois - ${service.title}`}
                 fill
+                sizes="(max-width: 768px) 100vw, 800px"
+                quality={90}
                 className="object-cover object-center"
                 priority
               />
@@ -97,6 +99,8 @@ export default function ServiceModal({ service, onClose }: ServiceModalProps) {
                 src={beforeImg}
                 alt={`Antes - ${service.title}`}
                 fill
+                sizes="(max-width: 768px) 100vw, 800px"
+                quality={90}
                 className="object-cover object-center"
                 priority
               />

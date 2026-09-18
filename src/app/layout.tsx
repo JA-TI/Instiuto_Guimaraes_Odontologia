@@ -95,7 +95,7 @@ const structuredData = {
   name: `${clinicInfo.name} - ${clinicInfo.fullName}`,
   alternateName: clinicInfo.fullName,
   image: 'https://igoodonto.com.br/images/clinic/IGO-Frente.jpeg',
-  logo: 'https://igoodonto.com.br/images/logo/igo-logo.svg',
+  logo: 'https://igoodonto.com.br/images/logo/igo-logo.png',
   url: 'https://igoodonto.com.br',
   telephone: `+55${clinicInfo.phone.replace(/\D/g, '')}`,
   priceRange: '$$',

@@ -64,8 +64,8 @@ export default function Services() {
                       src={service.image}
                       alt={service.title}
                       fill
-                      sizes="(max-width: 640px) 360px, (max-width: 1024px) 480px, 380px"
-                      quality={75}
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 450px"
+                      quality={85}
                       className="object-cover object-center"
                     />
                     
